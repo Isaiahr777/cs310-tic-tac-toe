@@ -74,9 +74,8 @@ public class TicTacToeModel {
         board = new Mark[width][width];
 
         /* Initialize board by filling every square with empty marks */
-        
         for (int i=0; i < width; i++){
-            for (int j=0; j < width; j++){
+           for (int j=0; j < width; j++){
                 board[i][j] = Mark.EMPTY;
             }
         }
@@ -115,9 +114,13 @@ public class TicTacToeModel {
         
         /* Return TRUE if the specified location is within the bounds of the board */
         
-        // INSERT YOUR CODE HERE
+        if ((-1 < row)&& (row < width) && (-1 < col) && (col<width)){
+            return true;
 
-        return false; // remove this line later!
+        } 
+        else{
+            return false;
+        }
         
     }
 	
@@ -125,19 +128,23 @@ public class TicTacToeModel {
         
         /* Return TRUE if the square at specified location is marked */
         
-        // INSERT YOUR CODE HERE
+        if (board[row][col]== Mark.EMPTY){
+            return false;
+        }
+        else{
+            return true;
+        }
 
-        return false; // remove this line later!
-            
+                   
     }
 	
     public Mark getMark(int row, int col) {
         
         /* Return the mark from the square at the specified location */
         
-        // INSERT YOUR CODE HERE
+        return board[row][col];
 
-        return null; // remove this line later!
+        
             
     }
 	
@@ -205,7 +212,7 @@ public class TicTacToeModel {
         
         /* Output the board contents as a string (see examples) */
         
-        // INSERT YOUR CODE HERE
+        
         
         return output.toString();
         
