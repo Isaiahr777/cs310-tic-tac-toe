@@ -1,5 +1,6 @@
 package edu.jsu.mcis;
 
+
 import java.util.Scanner;
 
 public class TicTacToeView {
@@ -20,16 +21,14 @@ public class TicTacToeView {
         
         /* Prompt the player to enter the row and the column of their next move.
            Return as a TicTacToeMove object. */
-           System.out.println("Please place your mark by entering the coordinates, with a space inbetween. for example, 0 0.");
-           int row = 0;
-           int col = 0;           
 
-            row = keyboard.nextInt(); 
-            col = keyboard.nextInt();
-              TicTacToeMove move= new TicTacToeMove(row, col);
-                       
-            return move;
-        
+        System.out.println("It is player" + (isXTurn? " (X) ":" (O) ") + "turn.");
+        System.out.print("Please enter the row and column numbers, separated by a space: ");
+        int row = keyboard.nextInt();
+        int col = keyboard.nextInt();
+
+        TicTacToeMove x = new TicTacToeMove(row,col);
+        return x;
 
     }
 
@@ -49,6 +48,5 @@ public class TicTacToeView {
         
         System.out.println("\n\n" + board);
         
-    }
-	
+    }	
 }
